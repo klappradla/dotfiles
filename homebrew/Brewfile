@@ -52,7 +52,8 @@ brew 'wxmac'               # for starting erlang observer / debugger
 
 # dev packages
 brew 'ansible'
-brew 'fd'
+brew 'fd'                         # faster find
+brew 'rg'                         # faster grep
 brew 'fzf'
 brew 'gh'                         # Github CLI
 brew 'git'
@@ -63,7 +64,6 @@ brew 'overmind'                   # Process manager (Procfile based)
 brew 'python'
 brew 'reattach-to-user-namespace' # fix tmux for macOS
 brew 'shellcheck'                 # Linter for shell scripts
-brew 'the_silver_searcher'        # the Ag search tool
 brew 'tmux'
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version

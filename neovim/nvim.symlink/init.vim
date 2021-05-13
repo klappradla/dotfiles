@@ -10,7 +10,7 @@ call plug#begin()
 Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
 
-Plug 'mileszs/ack.vim'                              " use Ack / the silversearcher
+Plug 'mileszs/ack.vim'                              " project-wide search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf executable
 Plug 'junegunn/fzf.vim'                             " additional fzf things
 Plug 'tpope/vim-commentary'                         " shortcuts for commenting in/out
@@ -106,7 +106,7 @@ au FileType markdown setlocal foldlevel=99          " start with folds open
 let test#strategy = "vimux"                         " run tests in tmux split
 let g:mix_format_on_save = 1                        " autoformat elixir code
 let g:deoplete#enable_at_startup = 1                " enable deoplete autocompletion
-let g:ackprg = 'ag --vimgrep --smart-case'          " use the silversearch for Ack
+let g:ackprg = 'rg --vimgrep --no-heading'          " use ripgrep for Ack
 au BufRead,BufNewFile Brewfile setfiletype ruby     " use ruby syntax in brewfiles
 let g:ale_sign_error = '!'                          " character for ale linter errors
 let g:ale_sign_warning = '~'                        " character for ale linter warnings
@@ -151,8 +151,6 @@ nnoremap j gj
 nnoremap k gk
 " use ctrl p for fzf
 nnoremap <silent> <c-p> :Files<cr>
-" use ag for Ack
-cnoreabbrev ag Ack
 " run tests in tmux split
 map <leader>t :TestNearest<cr>
 map <leader>f :TestFile<cr>
