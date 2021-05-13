@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install topics
+# Usage: script/install [topic]
+
 set -o errexit
 set -o nounset
 set -o pipefail
@@ -27,8 +30,14 @@ function install_topic() {
     | while read -r symlink; do $symlink; done
 }
 
-info "INSTALL TOPICS…"
-install_topic "$DOTS_DIR/homebrew"
-for topic in ${TOPICS[*]}; do
-  install_topic "$topic"
-done
+if [ $# -lt 1 ]; then
+  info "INSTALL TOPICS…"
+  install_topic "$DOTS_DIR/homebrew"
+  for topic in ${TOPICS[*]}; do
+    install_topic "$topic"
+  done
+else
+  info "INSTALL $1…"
+  install_topic "$DOTS_DIR/$1"
+fi
+
