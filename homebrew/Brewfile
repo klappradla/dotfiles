@@ -61,7 +61,6 @@ brew 'jq'                         # format JSON
 brew 'neovim'
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'python'
-brew 'reattach-to-user-namespace' # fix tmux for macOS
 brew 'shellcheck'                 # Linter for shell scripts
 brew 'tmux'
 brew 'watchman'                   # for filewatchers
