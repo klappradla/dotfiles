@@ -1,4 +1,3 @@
-set-option -g default-command 'reattach-to-user-namespace -l $SHELL'
 # enable true color support
 set -g default-terminal "xterm-256color"
 set-option -ga terminal-overrides ",xterm-256color:Tc"
@@ -9,7 +8,7 @@ set -g focus-events on
 # no delay when hitting escape
 set-option -s escape-time 0
 
-# remap prefix to ctrl + j
+# set prefix to ctrl + space
 unbind C-b
 set -g prefix C-Space
 bind C-Space send-prefix
@@ -85,26 +84,3 @@ set -g window-status-separator ""
 set -g status-justify centre
 # left status bar (spacegame...)
 set-option -g status-right '#{?client_prefix, space ,#{?pane_in_mode,   copy ,       }}'
-
-###
-# Plugins
-###
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-open'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-# restore panes but not their contents
-set -g @resurrect-capture-pane-contents 'off'
-# do not restore programs (e.g. vim)
-set -g @resurrect-processes 'false'
-# reenable auto renaming panes when restoring
-set -g @resurrect-hook-pre-restore-pane-processes 'for _pane in $(tmux list-panes -a -F "#{pane_id}"); do tmux set-option -w -t $_pane automatic-rename on; done'
-set -g @continuum-restore 'on'
-set -g @continuum-save-interval '15'
-
-# install tmp if not already there
-if "test ! -d ~/.tmux/plugins/tpm" \
-   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'; \
-   set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins/'; \
-   run '~/.tmux/plugins/tpm/bin/install_plugins'"
-run '~/.tmux/plugins/tpm/tpm'

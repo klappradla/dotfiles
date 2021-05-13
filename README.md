@@ -17,7 +17,7 @@ _(Note: the `homebrew` topic is always evaluated first as other topics depend on
 
 ## Installation
 
-_(on new computer: set up ssh keys first)_
+_(on new computer: [set up ssh keys](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) first)_
 
 ```sh
 # start in the home directory
@@ -32,5 +32,9 @@ cd dotfiles
 # run the install script
 script/setup
 ```
+
+## Tips & Tricks
+
+- Change/disable macOS' default keyboard shortcuts for _"Input Sources" if you want to use <kbd>CTRL</kbd> + <kbd>Space</kbd> as prefix in Tmux.
 
 _See [docs](./DOCS.md) for additional help._
