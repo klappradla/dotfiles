@@ -26,7 +26,7 @@ info "Show hidden files in Finder…"
 defaults write com.apple.finder "AppleShowAllFiles" -bool true && killall Finder
 
 info "Show file extensions in Finder…"
-defaults write -globalDomain "AppleShowAllExtensions" -bool true && killall Finder
+defaults write -globalDomain "AppleShowAllExtensions" -bool true
 
 info "Show path bar…"
 defaults write com.apple.finder "ShowPathbar" -bool "true"
@@ -43,7 +43,7 @@ defaults write com.apple.dock "mru-spaces" -bool "false"
 
 # Dock
 info "Auto-hide dock…"
-defaults write com.apple.dock "autohide" -bool true && killall Dock
+defaults write com.apple.dock "autohide" -bool true
 
 info "Don't show recent apps in dock…"
 defaults write com.apple.dock "show-recents" -bool false && killall Dock
