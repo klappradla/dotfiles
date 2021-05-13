@@ -37,7 +37,8 @@ if [ $# -lt 1 ]; then
     install_topic "$topic"
   done
 else
-  info "INSTALL $1…"
-  install_topic "$DOTS_DIR/$1"
+  TOPIC=$(echo "$1" |  tr '[a-z]' '[A-Z]' )
+  info "INSTALL "$TOPIC"…"
+  install_topic "$DOTS_DIR/$TOPIC"
 fi
 

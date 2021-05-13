@@ -54,7 +54,6 @@ brew 'wxmac'               # for starting erlang observer / debugger
 brew 'ansible'
 brew 'fd'                         # faster find
 brew 'rg'                         # faster grep
-brew 'fzf'
 brew 'gh'                         # Github CLI
 brew 'git'
 brew 'hadolint'                   # lint dockerfiles
