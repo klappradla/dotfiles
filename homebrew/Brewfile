@@ -1,13 +1,19 @@
 # frozen_string_literal: true
 
+require 'etc'
+
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'pmeinhardt/tools'
 
+# Some formulas arent' ready for Apple silicon yet
+# (if absoutely crucial, most work with Rosetta 2 though)
+arch = Etc.uname[:machine]
+is_m1 = arch == 'arm64'
+
 # core apps
 cask 'firefox'
-cask 'flux'
 cask 'iterm2'
 cask 'karabiner-elements' # keyboard mappings
 cask 'keepassxc'          # password manager
@@ -15,17 +21,15 @@ cask 'nextcloud'
 cask 'rectangle'          # window management
 
 # dev apps
-cask 'atom'
-cask 'chromedriver'
-cask 'docker'
+cask 'chromedriver' unless is_m1
+cask 'docker' unless is_m1
 cask 'google-chrome'
 
 # other apps
-cask 'gimp'
+cask 'gimp' unless is_m1
 cask 'imageoptim'         # remove exif-data from images
-cask 'inkscape'
+cask 'inkscape' unless is_m1
 cask 'kap'                # record screencasts
-cask 'libreoffice'
 cask 'signal'
 cask 'slack'
 cask 'spotify'
@@ -41,27 +45,23 @@ cask 'font-quicksand'
 brew 'autoconf'            # for installing erlang
 brew 'coreutils'           # GNU file, shell and text utilities
 brew 'gpg'                 # GNU privacy packages
-brew 'htop'
 brew 'openssl'
 brew 'readline'
-brew 'rsync'
 brew 'tree'
 brew 'watch'               # execute command periodically
 brew 'wget'
-brew 'wxmac'               # for starting erlang observer / debugger
 
 # dev packages
 brew 'ansible'
 brew 'fd'                         # faster find
-brew 'rg'                         # faster grep
 brew 'gh'                         # Github CLI
 brew 'git'
-brew 'hadolint'                   # lint dockerfiles
+brew 'hadolint' unless is_m1      # lint dockerfiles
 brew 'jq'                         # format JSON
 brew 'neovim'
 brew 'overmind'                   # Process manager (Procfile based)
-brew 'python'
-brew 'shellcheck'                 # Linter for shell scripts
+brew 'rg'                         # faster grep
+brew 'shellcheck' unless is_m1    # Linter for shell scripts
 brew 'tmux'
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
