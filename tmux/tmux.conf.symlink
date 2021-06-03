@@ -44,6 +44,13 @@ bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'V' send -X select-line
 bind-key -T copy-mode-vi 'y' send-keys -X copy-selection-and-cancel
 
+# open highlighted URL
+bind-key -T copy-mode-vi 'o' send-keys -X copy-pipe-and-cancel \
+  'xargs -I {} tmux run-shell -b "cd #{pane_current_path}; open {} > /dev/null"'
+# open file path in editor
+bind-key -T copy-mode-vi 'C-o' send-keys -X copy-pipe-and-cancel \
+  'xargs -I {} tmux send-keys "$EDITOR -- {}"; tmux send-keys "C-m"'
+
 # create new windows in the same directory
 bind-key c new-window -c '#{pane_current_path}'
 
