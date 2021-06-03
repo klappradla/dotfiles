@@ -27,8 +27,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'                             " snippets
 Plug 'dense-analysis/ale'                           " linting
 
-Plug 'tonekk/vim-binding-pry',        { 'for': 'ruby' }
-Plug 'slim-template/vim-slim',        { 'for': 'slim' }
 Plug 'elixir-editors/vim-elixir',     { 'for': 'elixir' }
 Plug 'mhinz/vim-mix-format',          { 'for': 'elixir' }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
