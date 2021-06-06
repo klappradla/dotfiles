@@ -33,6 +33,12 @@ cd dotfiles
 script/setup
 ```
 
+To install topics individually:
+
+```sh
+script/install <topic>
+```
+
 ## Tips & Tricks
 
 - Change/disable macOS' default keyboard shortcuts for _"Input Sources" if you want to use <kbd>CTRL</kbd> + <kbd>Space</kbd> as prefix in Tmux.
