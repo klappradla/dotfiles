@@ -96,7 +96,7 @@ let g:neosolarized_vertSplitBgTrans = 1             " transparent split bars
 au FileType markdown setlocal wrap                  " wrap lines in markdown files
 hi! link markdownItalic Italic
 hi! link markdownBold Bold
-let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'elixir', 'json', 'html']
+let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'elixir', 'json', 'javascript', 'html']
 let g:markdown_folding = 1                          " enable folding sections on headers in markdown files
 au FileType markdown setlocal foldlevel=99          " start with folds open
 
