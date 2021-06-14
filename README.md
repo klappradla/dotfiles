@@ -41,6 +41,6 @@ script/install <topic>
 
 ## Tips & Tricks
 
-- Change/disable macOS' default keyboard shortcuts for _"Input Sources" if you want to use <kbd>CTRL</kbd> + <kbd>Space</kbd> as prefix in Tmux.
+- Change/disable macOS' default keyboard shortcuts for _"Input Sources"_ if you want to use <kbd>CTRL</kbd> + <kbd>Space</kbd> as prefix in Tmux.
 
 _See [docs](./DOCS.md) for additional help._
