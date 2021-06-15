@@ -51,6 +51,7 @@ if [ -f "$HOME/.asdf/asdf.sh" ]; then                   # asdf
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
 if which pyenv > /dev/null; then                        # pyenv
+  eval "$(pyenv init --path)";
   eval "$(pyenv init - zsh --no-rehash)";
 fi
 
