@@ -22,6 +22,7 @@ Plug 'tpope/vim-endwise'                            " for automatically adding '
 Plug 'machakann/vim-highlightedyank'                " blink-highlight what gets yanked
 Plug 'editorconfig/editorconfig-vim'                " accept editorconfig files
 Plug 'pmeinhardt/hmm'                               " joblogs
+Plug 'eiginn/netrw'                                 " current version of netrw
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'                             " snippets
