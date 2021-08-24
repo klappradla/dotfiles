@@ -27,6 +27,7 @@ Plug 'eiginn/netrw'                                 " current version of netrw
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'                             " snippets
 Plug 'dense-analysis/ale'                           " linting
+Plug 'mattn/vim-woke'                               " detect non-inclusive language
 
 Plug 'elixir-editors/vim-elixir',     { 'for': 'elixir' }
 Plug 'mhinz/vim-mix-format',          { 'for': 'elixir' }

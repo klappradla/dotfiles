@@ -64,6 +64,7 @@ brew 'rg'                         # faster grep
 brew 'shellcheck' unless is_m1    # Linter for shell scripts
 brew 'tmux'
 brew 'watchman'                   # for filewatchers
+brew 'get-woke/tap/woke'          # linter for non-inclusive language in code
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
 brew 'zsh'
 
