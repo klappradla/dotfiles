@@ -30,12 +30,9 @@ cask 'gimp' unless is_m1
 cask 'imageoptim'         # remove exif-data from images
 cask 'inkscape' unless is_m1
 cask 'kap'                # record screencasts
-cask 'signal'
 cask 'slack'
 cask 'spotify'
-cask 'telegram'
 cask 'vlc'
-cask 'whatsapp'
 
 # fonts
 cask 'font-dosis'
