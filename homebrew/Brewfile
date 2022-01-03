@@ -24,6 +24,7 @@ cask 'rectangle'          # window management
 cask 'chromedriver' unless is_m1
 cask 'docker' unless is_m1
 cask 'google-chrome'
+cask 'postgres-unofficial'
 
 # other apps
 cask 'gimp' unless is_m1

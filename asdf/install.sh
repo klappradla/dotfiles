@@ -35,7 +35,6 @@ source "$ASDF_BIN/asdf.sh"
 
 add_plugin "ruby"
 add_plugin "nodejs"
-add_plugin "postgres"
 add_plugin "erlang"
 add_plugin "elixir"
 
