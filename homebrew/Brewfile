@@ -27,9 +27,7 @@ cask 'google-chrome'
 cask 'postgres-unofficial'
 
 # other apps
-cask 'gimp' unless is_m1
 cask 'imageoptim'         # remove exif-data from images
-cask 'inkscape' unless is_m1
 cask 'kap'                # record screencasts
 cask 'slack'
 cask 'spotify'
