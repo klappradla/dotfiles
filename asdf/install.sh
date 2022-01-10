@@ -10,7 +10,7 @@ set -o pipefail
 source "../script/lib//utils.sh"
 
 declare ASDF_BIN="$HOME/.asdf"
-readonly VERSION="v0.8.0"
+readonly VERSION="v0.9.0"
 
 function add_plugin() {
   local name="$1"
