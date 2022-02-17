@@ -115,7 +115,9 @@ let g:ale_fixers = {
   \ 'javascript': ['prettier', 'eslint'],
   \ 'javascriptreact': ['prettier', 'eslint'],
   \ 'typescript': ['prettier', 'eslint'],
-  \ 'typescriptreact': ['prettier', 'eslint']
+  \ 'typescriptreact': ['prettier', 'eslint'],
+  \ 'scss': ['prettier', 'stylelint'],
+  \ 'css': ['prettier', 'stylelint']
 \ }
 
 """ fzf
