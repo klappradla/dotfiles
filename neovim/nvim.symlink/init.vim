@@ -23,9 +23,16 @@ Plug 'editorconfig/editorconfig-vim'                " accept editorconfig files
 Plug 'pmeinhardt/hmm'                               " joblogs
 Plug 'eiginn/netrw'                                 " current version of netrw
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dense-analysis/ale'                           " linting
 Plug 'mattn/vim-woke'                               " detect non-inclusive language
+
+Plug 'neovim/nvim-lspconfig'                        " LSP
+Plug 'hrsh7th/cmp-nvim-lsp'                         " LSP
+Plug 'hrsh7th/cmp-buffer'                           " buffer completion
+Plug 'hrsh7th/cmp-path'                             " path completion
+Plug 'hrsh7th/cmp-cmdline'                          " cmd completion
+Plug 'hrsh7th/nvim-cmp'                             " completion framework
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'          " snippet completion
 
 Plug 'elixir-editors/vim-elixir',     { 'for': 'elixir' }
 Plug 'mhinz/vim-mix-format',          { 'for': 'elixir' }
@@ -103,7 +110,6 @@ au FileType markdown setlocal foldlevel=99          " start with folds open
 """ plugin settings
 let test#strategy = "vimux"                         " run tests in tmux split
 let g:mix_format_on_save = 1                        " autoformat elixir code
-let g:deoplete#enable_at_startup = 1                " enable deoplete autocompletion
 let g:ackprg = 'rg --vimgrep --no-heading'          " use ripgrep for Ack
 au BufRead,BufNewFile Brewfile setfiletype ruby     " use ruby syntax in brewfiles
 let g:ale_sign_error = '!'                          " character for ale linter errors
@@ -155,3 +161,7 @@ nnoremap <silent><ESC> :noh<return><ESC>
 command FormatJSON %!jq .
 command German :set spelllang=de                    " set spellcheck language to German
 command English :set spelllang=en                   " set language to English
+
+""" completion
+set completeopt=menu,menuone,noselect
+:lua require('completion')
