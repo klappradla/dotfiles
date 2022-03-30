@@ -22,17 +22,19 @@ Plug 'machakann/vim-highlightedyank'                " blink-highlight what gets 
 Plug 'editorconfig/editorconfig-vim'                " accept editorconfig files
 Plug 'pmeinhardt/hmm'                               " joblogs
 Plug 'eiginn/netrw'                                 " current version of netrw
-
-Plug 'dense-analysis/ale'                           " linting
 Plug 'mattn/vim-woke'                               " detect non-inclusive language
 
-Plug 'neovim/nvim-lspconfig'                        " LSP
-Plug 'hrsh7th/cmp-nvim-lsp'                         " LSP
+" Plug 'neovim/nvim-lspconfig'                        " LSP
+" Plug 'hrsh7th/cmp-nvim-lsp'                         " LSP
 Plug 'hrsh7th/cmp-buffer'                           " buffer completion
 Plug 'hrsh7th/cmp-path'                             " path completion
 Plug 'hrsh7th/cmp-cmdline'                          " cmd completion
 Plug 'hrsh7th/nvim-cmp'                             " completion framework
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'          " snippet completion
+
+Plug 'mfussenegger/nvim-lint'                       " linting
+" Plug 'jose-elias-alvarez/null-ls.nvim'              " linting & formatting
+" Plug 'nvim-lua/plenary.nvim'
 
 Plug 'elixir-editors/vim-elixir',     { 'for': 'elixir' }
 Plug 'mhinz/vim-mix-format',          { 'for': 'elixir' }
@@ -112,17 +114,17 @@ let test#strategy = "vimux"                         " run tests in tmux split
 let g:mix_format_on_save = 1                        " autoformat elixir code
 let g:ackprg = 'rg --vimgrep --no-heading'          " use ripgrep for Ack
 au BufRead,BufNewFile Brewfile setfiletype ruby     " use ruby syntax in brewfiles
-let g:ale_sign_error = '!'                          " character for ale linter errors
-let g:ale_sign_warning = '~'                        " character for ale linter warnings
-let g:ale_fix_on_save = 1                           " automatically fix lint errors on save
-let g:ale_fixers = {
-  \ 'javascript': ['prettier', 'eslint'],
-  \ 'javascriptreact': ['prettier', 'eslint'],
-  \ 'typescript': ['prettier', 'eslint'],
-  \ 'typescriptreact': ['prettier', 'eslint'],
-  \ 'scss': ['prettier', 'stylelint'],
-  \ 'css': ['prettier', 'stylelint']
-\ }
+" let g:ale_sign_error = '!'                          " character for ale linter errors
+" let g:ale_sign_warning = '~'                        " character for ale linter warnings
+" let g:ale_fix_on_save = 1                           " automatically fix lint errors on save
+" let g:ale_fixers = {
+"   \ 'javascript': ['prettier', 'eslint'],
+"   \ 'javascriptreact': ['prettier', 'eslint'],
+"   \ 'typescript': ['prettier', 'eslint'],
+"   \ 'typescriptreact': ['prettier', 'eslint'],
+"   \ 'scss': ['prettier', 'stylelint'],
+"   \ 'css': ['prettier', 'stylelint']
+" \ }
 
 """ fzf
 " use 'fd', show hidden files, exclude gitignored files
@@ -165,3 +167,8 @@ command English :set spelllang=en                   " set language to English
 """ completion
 set completeopt=menu,menuone,noselect
 :lua require('completion')
+" :lua require('lint-and-format')
+:lua require('linting')
+augroup linting
+  autocmd BufRead,BufWritePost * lua require('lint').try_lint()
+augroup END
