@@ -24,20 +24,19 @@ Plug 'pmeinhardt/hmm'                               " joblogs
 Plug 'eiginn/netrw'                                 " current version of netrw
 Plug 'mattn/vim-woke'                               " detect non-inclusive language
 
-" Plug 'neovim/nvim-lspconfig'                        " LSP
-" Plug 'hrsh7th/cmp-nvim-lsp'                         " LSP
+Plug 'neovim/nvim-lspconfig'                        " LSP
+
+Plug 'hrsh7th/cmp-nvim-lsp'                         " LSP completion
 Plug 'hrsh7th/cmp-buffer'                           " buffer completion
 Plug 'hrsh7th/cmp-path'                             " path completion
-Plug 'hrsh7th/cmp-cmdline'                          " cmd completion
 Plug 'hrsh7th/nvim-cmp'                             " completion framework
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'          " snippet completion
 
-Plug 'mfussenegger/nvim-lint'                       " linting
-" Plug 'jose-elias-alvarez/null-ls.nvim'              " linting & formatting
-" Plug 'nvim-lua/plenary.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'              " linting & formatting
+
+Plug 'nvim-lua/plenary.nvim'                        " additional lua functions
 
 Plug 'elixir-editors/vim-elixir',     { 'for': 'elixir' }
-Plug 'mhinz/vim-mix-format',          { 'for': 'elixir' }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
 Plug 'maxmellon/vim-jsx-pretty',      { 'for': 'javascript' }
 Plug 'HerringtonDarkholme/yats.vim',  { 'for': 'typescript' }
@@ -160,15 +159,11 @@ map <leader><space> :Buffers<cr>
 nnoremap <silent><ESC> :noh<return><ESC>
 
 """ commands
-command FormatJSON %!jq .
 command German :set spelllang=de                    " set spellcheck language to German
 command English :set spelllang=en                   " set language to English
 
 """ completion
 set completeopt=menu,menuone,noselect
+:lua require('lsp')
 :lua require('completion')
-" :lua require('lint-and-format')
-:lua require('linting')
-augroup linting
-  autocmd BufRead,BufWritePost * lua require('lint').try_lint()
-augroup END
+:lua require('nullls')
