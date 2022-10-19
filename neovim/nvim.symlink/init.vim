@@ -164,6 +164,8 @@ command English :set spelllang=en                   " set language to English
 
 """ completion
 set completeopt=menu,menuone,noselect
+
+""" lua
 :lua require('lsp')
 :lua require('completion')
 :lua require('nullls')
