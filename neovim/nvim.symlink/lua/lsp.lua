@@ -15,12 +15,14 @@ local lsp_formatting = function(bufnr)
 	})
 end
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_client, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-  -- Mappings
+	-- Mappings
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
-	vim.keymap.set("n", "<leader>fm", function() lsp_formatting(bufnr) end, bufopts)
+	vim.keymap.set("n", "<leader>fm", function()
+		lsp_formatting(bufnr)
+	end, bufopts)
 end
 
 -- Language servers

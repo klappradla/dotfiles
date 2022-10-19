@@ -7,19 +7,20 @@ local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
 	sources = {
-    diagnostics.ansiblelint,
-    diagnostics.eslint,
-    diagnostics.haml_lint,
-    diagnostics.rubocop,
-    diagnostics.yamllint,
+		diagnostics.ansiblelint,
+		diagnostics.eslint,
+		diagnostics.haml_lint,
+		diagnostics.luacheck,
+		diagnostics.rubocop,
+		diagnostics.yamllint,
 		--
 		code_actions.eslint,
 		--
 		formatting.eslint,
 		formatting.prettier,
 		formatting.stylua,
-    formatting.jq,
-    formatting.mix,
+		formatting.jq,
+		formatting.mix,
 	},
 	on_attach = lsp.on_attach,
 })
