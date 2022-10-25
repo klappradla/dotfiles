@@ -11,7 +11,9 @@ null_ls.setup({
 		diagnostics.eslint,
 		diagnostics.haml_lint,
 		diagnostics.luacheck,
-		diagnostics.rubocop,
+		diagnostics.rubocop.with({
+      method = null_ls.methods.DIAGNOSTICS_ON_SAVE
+    }),
 		diagnostics.yamllint,
 		--
 		code_actions.eslint,
