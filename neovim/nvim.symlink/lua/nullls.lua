@@ -19,10 +19,11 @@ null_ls.setup({
 		code_actions.eslint,
 		--
 		formatting.eslint,
-		formatting.prettier,
-		formatting.stylua,
 		formatting.jq,
 		formatting.mix,
+		formatting.prettier,
+		formatting.rubocop,
+		formatting.stylua,
 	},
 	on_attach = lsp.on_attach,
 })
