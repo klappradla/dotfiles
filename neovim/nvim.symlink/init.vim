@@ -22,7 +22,6 @@ Plug 'machakann/vim-highlightedyank'                " blink-highlight what gets 
 Plug 'editorconfig/editorconfig-vim'                " accept editorconfig files
 Plug 'pmeinhardt/hmm'                               " joblogs
 Plug 'eiginn/netrw'                                 " current version of netrw
-Plug 'mattn/vim-woke'                               " detect non-inclusive language
 
 Plug 'neovim/nvim-lspconfig'                        " LSP
 
