@@ -1,5 +1,9 @@
 local cmp = require("cmp")
 
+local get_all_buffers = function()
+  return vim.api.nvim_list_bufs()
+end
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -21,7 +25,7 @@ cmp.setup({
 		{ name = "ultisnips" },
 	}, {
 		{ name = "path" },
-		{ name = "buffer", keyword_length = 3 },
+		{ name = "buffer", keyword_length = 3, option = { get_bufnrs = get_all_buffers } },
 	}),
 })
 
