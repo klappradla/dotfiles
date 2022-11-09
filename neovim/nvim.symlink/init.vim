@@ -7,7 +7,6 @@ let g:python3_host_prog = '/usr/bin/python3'        " use system Python
 """"""
 call plug#begin()
 Plug 'overcache/NeoSolarized'
-Plug 'morhetz/gruvbox'
 
 Plug 'mileszs/ack.vim'                              " project-wide search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf executable
