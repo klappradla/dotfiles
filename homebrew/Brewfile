@@ -53,6 +53,7 @@ brew 'fd'                         # faster find
 brew 'gh'                         # Github CLI
 brew 'git'
 brew 'hadolint' unless is_m1      # lint dockerfiles
+brew 'yamllint'                   # lint yaml files
 brew 'jq'                         # format JSON
 brew 'neovim'
 brew 'overmind'                   # Process manager (Procfile based)
