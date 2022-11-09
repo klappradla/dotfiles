@@ -9,7 +9,6 @@ null_ls.setup({
 	sources = {
 		diagnostics.ansiblelint,
 		diagnostics.eslint,
-		diagnostics.haml_lint,
 		diagnostics.luacheck,
 		diagnostics.rubocop.with({
       method = null_ls.methods.DIAGNOSTICS_ON_SAVE
