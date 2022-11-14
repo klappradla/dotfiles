@@ -54,6 +54,8 @@ brew 'gh'                         # Github CLI
 brew 'git'
 brew 'hadolint' unless is_m1      # lint dockerfiles
 brew 'yamllint'                   # lint yaml files
+brew 'stylua'                     # lint lua files
+brew 'luarocks'                   # package manager for lua
 brew 'jq'                         # format JSON
 brew 'neovim'
 brew 'overmind'                   # Process manager (Procfile based)
