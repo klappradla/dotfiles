@@ -27,7 +27,6 @@ Plug 'hrsh7th/cmp-nvim-lsp'                         " LSP completion
 Plug 'hrsh7th/cmp-buffer'                           " buffer completion
 Plug 'hrsh7th/cmp-path'                             " path completion
 Plug 'hrsh7th/nvim-cmp'                             " completion framework
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'          " snippet completion
 
 Plug 'jose-elias-alvarez/null-ls.nvim'              " linting & formatting
 
