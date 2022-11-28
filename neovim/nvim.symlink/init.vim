@@ -109,17 +109,6 @@ let test#strategy = "vimux"                         " run tests in tmux split
 let g:mix_format_on_save = 1                        " autoformat elixir code
 let g:ackprg = 'rg --vimgrep --no-heading'          " use ripgrep for Ack
 au BufRead,BufNewFile Brewfile setfiletype ruby     " use ruby syntax in brewfiles
-" let g:ale_sign_error = '!'                          " character for ale linter errors
-" let g:ale_sign_warning = '~'                        " character for ale linter warnings
-" let g:ale_fix_on_save = 1                           " automatically fix lint errors on save
-" let g:ale_fixers = {
-"   \ 'javascript': ['prettier', 'eslint'],
-"   \ 'javascriptreact': ['prettier', 'eslint'],
-"   \ 'typescript': ['prettier', 'eslint'],
-"   \ 'typescriptreact': ['prettier', 'eslint'],
-"   \ 'scss': ['prettier', 'stylelint'],
-"   \ 'css': ['prettier', 'stylelint']
-" \ }
 
 """ fzf
 " use 'fd', show hidden files, exclude gitignored files
