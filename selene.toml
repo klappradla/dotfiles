@@ -1,0 +1,3 @@
+std = "lua51+vimlua"
+[lints]
+unused_variable = "allow" # I'm fine with unused variables in code
