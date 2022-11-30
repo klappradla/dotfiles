@@ -38,14 +38,15 @@ cask 'font-dosis'
 cask 'font-quicksand'
 
 # packages
-brew 'autoconf'            # for installing erlang
-brew 'coreutils'           # GNU file, shell and text utilities
-brew 'gpg'                 # GNU privacy packages
+brew 'autoconf'             # for installing erlang
+brew 'coreutils'            # GNU file, shell and text utilities
+brew 'gpg'                  # GNU privacy packages
 brew 'openssl'
 brew 'readline'
 brew 'tree'
-brew 'watch'               # execute command periodically
+brew 'watch'                # execute command periodically
 brew 'wget'
+brew 'pmeinhardt/tools/bun' # remove brew formulas with leaves
 
 # dev packages
 brew 'ansible'
