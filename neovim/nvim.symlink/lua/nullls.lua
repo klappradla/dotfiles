@@ -6,23 +6,23 @@ local code_actions = null_ls.builtins.code_actions
 local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
-	sources = {
-		diagnostics.ansiblelint,
-		diagnostics.eslint,
-		diagnostics.luacheck,
-		diagnostics.rubocop.with({
-      method = null_ls.methods.DIAGNOSTICS_ON_SAVE
+  sources = {
+    diagnostics.ansiblelint,
+    diagnostics.eslint,
+    diagnostics.luacheck,
+    diagnostics.rubocop.with({
+      method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
     }),
-		diagnostics.yamllint,
-		--
-		code_actions.eslint,
-		--
-		formatting.eslint,
-		formatting.jq,
-		formatting.mix,
-		formatting.prettier,
-		formatting.rubocop,
-		formatting.stylua,
-	},
-	on_attach = lsp.on_attach,
+    diagnostics.yamllint,
+    --
+    code_actions.eslint,
+    --
+    formatting.eslint,
+    formatting.jq,
+    formatting.mix,
+    formatting.prettier,
+    formatting.rubocop,
+    formatting.stylua,
+  },
+  on_attach = lsp.on_attach,
 })
