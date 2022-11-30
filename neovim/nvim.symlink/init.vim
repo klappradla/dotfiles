@@ -23,9 +23,12 @@ Plug 'pmeinhardt/hmm'                               " joblogs
 
 Plug 'neovim/nvim-lspconfig'                        " LSP
 
+Plug 'dcampos/nvim-snippy'                          " snippets
+
 Plug 'hrsh7th/cmp-nvim-lsp'                         " LSP completion
 Plug 'hrsh7th/cmp-buffer'                           " buffer completion
 Plug 'hrsh7th/cmp-path'                             " path completion
+Plug 'dcampos/cmp-snippy'                           " snippet completion
 Plug 'hrsh7th/nvim-cmp'                             " completion framework
 
 Plug 'jose-elias-alvarez/null-ls.nvim'              " linting & formatting
@@ -154,3 +157,4 @@ set completeopt=menu,menuone,noselect
 :lua require('lsp')
 :lua require('completion')
 :lua require('nullls')
+:lua require('snippets')
