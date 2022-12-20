@@ -24,7 +24,6 @@ Plug 'pmeinhardt/hmm'                               " joblogs
 Plug 'eiginn/netrw'                                 " current version of netrw
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'SirVer/ultisnips'                             " snippets
 Plug 'dense-analysis/ale'                           " linting
 Plug 'mattn/vim-woke'                               " detect non-inclusive language
 
@@ -126,15 +125,6 @@ let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
 let g:fzf_preview_window = ''
 " layout for overlay window
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Comment' } }
-
-""" snippets
-" rank snippets higher in autocomplete search
-call deoplete#custom#source('ultisnips', 'rank', 1000)
-" snippet directory for UltiSnips
-let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
-" swallow python warnings
-let g:UltiSnipsNoPythonWarning = 1
-
 
 """"""
 """ magic
