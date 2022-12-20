@@ -3,78 +3,45 @@
 require 'etc'
 
 tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'pmeinhardt/tools'
 
-# Some formulas arent' ready for Apple silicon yet
-# (if absoutely crucial, most work with Rosetta 2 though)
-arch = Etc.uname[:machine]
-is_m1 = arch == 'arm64'
-
-# core apps
+# apps
 cask 'firefox'
+cask 'google-chrome'
+cask 'imageoptim'         # remove exif-data from images
 cask 'iterm2'
 cask 'karabiner-elements' # keyboard mappings
 cask 'keepassxc'          # password manager
 cask 'nextcloud'
-cask 'rectangle'          # window management
-
-# dev apps
-cask 'chromedriver' unless is_m1
-cask 'docker' unless is_m1
-cask 'google-chrome'
 cask 'postgres-unofficial'
-
-# other apps
-cask 'imageoptim'         # remove exif-data from images
-cask 'kap'                # record screencasts
+cask 'rectangle'          # window management
 cask 'slack'
 cask 'spotify'
-cask 'vlc'
-
-# fonts
-cask 'font-dosis'
-cask 'font-quicksand'
 
 # packages
 brew 'autoconf'             # for installing erlang
 brew 'coreutils'            # GNU file, shell and text utilities
 brew 'gpg'                  # GNU privacy packages
 brew 'openssl'
+brew 'pmeinhardt/tools/bun' # remove brew formulas with leaves
+brew 'pmeinhardt/tools/hmm'
 brew 'readline'
 brew 'tree'
 brew 'watch'                # execute command periodically
 brew 'wget'
-brew 'pmeinhardt/tools/bun' # remove brew formulas with leaves
 
-# dev packages
-brew 'ansible'
+# dev tools
 brew 'fd'                         # faster find
 brew 'gh'                         # Github CLI
 brew 'git'
-brew 'hadolint' unless is_m1      # lint dockerfiles
-brew 'yamllint'                   # lint yaml files
-brew 'selene'                     # lint lua files
-brew 'stylua'                     # format lua files
 brew 'jq'                         # format JSON
 brew 'neovim'
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'rg'                         # faster grep
-brew 'shellcheck' unless is_m1    # Linter for shell scripts
 brew 'tmux'
-brew 'watchman'                   # for filewatchers
-brew 'get-woke/tap/woke'          # linter for non-inclusive language in code
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
 brew 'zsh'
-
-# postgis packages
-brew 'geos'
-brew 'json-c'
-brew 'proj'
-
-# work related packages
-brew 'pmeinhardt/tools/hmm'
 
 # services
 brew 'redis', restart_service: true
