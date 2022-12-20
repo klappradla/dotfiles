@@ -6,7 +6,7 @@ let g:python3_host_prog = '/usr/bin/python3'        " use system Python
 """ plugins
 """"""
 call plug#begin()
-Plug 'iCyMind/NeoSolarized'
+Plug 'overcache/NeoSolarized'
 Plug 'morhetz/gruvbox'
 
 Plug 'mileszs/ack.vim'                              " project-wide search
