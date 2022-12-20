@@ -121,8 +121,6 @@ let g:ale_fixers = {
 """ fzf
 " use 'fd', show hidden files, exclude gitignored files
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
-" disable preview window
-let g:fzf_preview_window = ''
 " layout for overlay window
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Comment' } }
 
