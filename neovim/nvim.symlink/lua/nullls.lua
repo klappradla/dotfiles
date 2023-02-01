@@ -19,7 +19,6 @@ null_ls.setup({
     --
     formatting.eslint,
     formatting.jq,
-    formatting.mix,
     formatting.prettier,
     formatting.rubocop,
     formatting.stylua,
