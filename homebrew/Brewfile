@@ -32,6 +32,7 @@ brew 'watch'                # execute command periodically
 brew 'wget'
 
 # dev tools
+brew 'elixir-ls'                  # elixir language server
 brew 'fd'                         # faster find
 brew 'gh'                         # Github CLI
 brew 'git'
