@@ -109,9 +109,9 @@ au FileType markdown setlocal foldlevel=99          " start with folds open
 
 """ plugin settings
 let test#strategy = "vimux"                         " run tests in tmux split
-let g:mix_format_on_save = 1                        " autoformat elixir code
 let g:ackprg = 'rg --vimgrep --no-heading'          " use ripgrep for Ack
 au BufRead,BufNewFile Brewfile setfiletype ruby     " use ruby syntax in brewfiles
+au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
 
 """ fzf
 " use 'fd', show hidden files, exclude gitignored files
