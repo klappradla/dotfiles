@@ -21,19 +21,9 @@ Plug 'machakann/vim-highlightedyank'                " blink-highlight what gets 
 Plug 'editorconfig/editorconfig-vim'                " accept editorconfig files
 Plug 'pmeinhardt/hmm'                               " joblogs
 
-Plug 'neovim/nvim-lspconfig'                        " LSP
-
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'dense-analysis/ale'                           " linting, completion, LSP
 Plug 'dcampos/nvim-snippy'                          " snippets
-
-Plug 'hrsh7th/cmp-nvim-lsp'                         " LSP completion
-Plug 'hrsh7th/cmp-buffer'                           " buffer completion
-Plug 'hrsh7th/cmp-path'                             " path completion
-Plug 'dcampos/cmp-snippy'                           " snippet completion
-Plug 'hrsh7th/nvim-cmp'                             " completion framework
-
-Plug 'jose-elias-alvarez/null-ls.nvim'              " linting & formatting
-
-Plug 'nvim-lua/plenary.nvim'                        " additional lua functions
 
 Plug 'elixir-editors/vim-elixir',     { 'for': 'elixir' }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
@@ -109,9 +99,22 @@ au FileType markdown setlocal foldlevel=99          " start with folds open
 
 """ plugin settings
 let test#strategy = "vimux"                         " run tests in tmux split
+let g:deoplete#enable_at_startup = 1                " enable deoplete autocompletion
 let g:ackprg = 'rg --vimgrep --no-heading'          " use ripgrep for Ack
 au BufRead,BufNewFile Brewfile setfiletype ruby     " use ruby syntax in brewfiles
-au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+au BufRead,BufNewFile
+  \ *.eex,*.heex,*.leex,*.sface,*.lexs
+  \ set filetype=eelixir
+let g:ale_sign_error = '!'                          " character for ale linter errors
+let g:ale_sign_warning = '~'                        " character for ale linter warnings
+let g:ale_fixers = {
+  \ 'javascript': ['prettier', 'eslint'],
+  \ 'javascriptreact': ['prettier', 'eslint'],
+  \ 'typescript': ['prettier', 'eslint'],
+  \ 'typescriptreact': ['prettier', 'eslint'],
+  \ 'scss': ['prettier', 'stylelint'],
+  \ 'css': ['prettier', 'stylelint']
+\ }
 
 """ fzf
 " use 'fd', show hidden files, exclude gitignored files
@@ -154,7 +157,7 @@ command English :set spelllang=en                   " set language to English
 set completeopt=menu,menuone,noselect
 
 """ lua
-:lua require('lsp')
-:lua require('completion')
-:lua require('nullls')
-:lua require('snippets')
+" :lua require('lsp')
+" :lua require('completion')
+" :lua require('nullls')
+" :lua require('snippets')
