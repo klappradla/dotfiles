@@ -11,6 +11,8 @@ local on_attach = function(_client, bufnr)
   -- Mappings
   vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
   vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
 end
 
 -- Language servers
