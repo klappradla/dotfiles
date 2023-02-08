@@ -1,4 +1,7 @@
 local lspconfig = require("lspconfig")
+local cmp_lsp = require("cmp_nvim_lsp")
+
+local capabilities = cmp_lsp.default_capabilities()
 
 -- Mappings
 local opts = { noremap = true, silent = true }
@@ -18,10 +21,12 @@ end
 -- Language servers
 lspconfig.tsserver.setup({
   on_attach = on_attach,
+  capabilities = capabilities,
 })
 lspconfig.elixirls.setup({
   cmd = { "elixir-ls" },
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities,
 })
 
 return { on_attach = on_attach }
