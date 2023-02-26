@@ -41,4 +41,3 @@ else
   info "INSTALL "$TOPIC"…"
   install_topic "$DOTS_DIR/$TOPIC"
 fi
-

@@ -10,4 +10,3 @@ set -o pipefail
 # load settings for iTerm from dotfiles
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/dotfiles/iterm"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
