@@ -13,5 +13,3 @@ brew install fzf
 
 info "INSTALL FZF KEY BINDINGS AND COMPLETION…"
 $(brew --prefix)/opt/fzf/install --no-update-rc
-
-
