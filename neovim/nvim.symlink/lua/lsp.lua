@@ -3,6 +3,10 @@ local cmp_lsp = require("cmp_nvim_lsp")
 
 local capabilities = cmp_lsp.default_capabilities()
 
+local format_buffer = function()
+  vim.lsp.buf.format({ async = true })
+end
+
 -- Mappings
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
@@ -13,9 +17,9 @@ local on_attach = function(_client, bufnr)
 
   -- Mappings
   vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set("n", "<leader>fm", format_buffer, bufopts)
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 end
 
 -- Language servers
