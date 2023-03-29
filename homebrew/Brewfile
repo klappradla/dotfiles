@@ -1,48 +1,43 @@
 # frozen_string_literal: true
 
-require 'etc'
-
 tap 'homebrew/cask'
-tap 'homebrew/services'
 tap 'pmeinhardt/tools'
 
 # apps
 cask 'firefox'
 cask 'google-chrome'
-cask 'imageoptim'         # remove exif-data from images
+cask 'imageoptim'
 cask 'iterm2'
-cask 'karabiner-elements' # keyboard mappings
-cask 'keepassxc'          # password manager
+cask 'karabiner-elements'
+cask 'keepassxc'
 cask 'nextcloud'
 cask 'postgres-unofficial'
-cask 'rectangle'          # window management
+cask 'rectangle'
 cask 'slack'
 cask 'spotify'
 
 # packages
-brew 'autoconf'             # for installing erlang
-brew 'coreutils'            # GNU file, shell and text utilities
-brew 'gpg'                  # GNU privacy packages
-brew 'openssl'
-brew 'pmeinhardt/tools/bun' # remove brew formulas with leaves
+brew 'autoconf'  # for installing erlang
+brew 'coreutils'
+brew 'gpg'
+brew 'pmeinhardt/tools/bun'  # remove brew formulas with leaves
 brew 'pmeinhardt/tools/hmm'
-brew 'readline'
 brew 'tree'
-brew 'watch'                # execute command periodically
+brew 'watch'
 brew 'wget'
 
 # dev tools
-brew 'elixir-ls'                  # elixir language server
-brew 'fd'                         # faster find
-brew 'gh'                         # Github CLI
+brew 'elixir-ls'
+brew 'fd'
+brew 'gh'
 brew 'git'
-brew 'jq'                         # format JSON
+brew 'jq'
 brew 'neovim'
-brew 'overmind'                   # Process manager (Procfile based)
-brew 'rg'                         # faster grep
+brew 'overmind'
+brew 'rg'
 brew 'tmux'
-brew 'yarn'                       # run with --ignore-engines if incompatible with node version
+brew 'yarn'
 brew 'zsh'
 
 # services
-brew 'redis', restart_service: true
+brew 'redis'
