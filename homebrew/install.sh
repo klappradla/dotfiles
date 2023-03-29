@@ -12,14 +12,14 @@ SCRIPT_DIR=$(dirname "$0")
 source "$SCRIPT_DIR/../script/lib/utils.sh"
 
 if ! command -v brew >/dev/null; then
-  info "INSTALL HOMEBEW…"
+  info "Install homebrew…"
   /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-  info "UPDATE HOMEBEW…"
+  info "Update homebrew…"
   brew update
 fi
 
-info "INSTALL/UPDATE BREWS…"
+info "Install apps and packages…"
 brew bundle \
   --no-lock \
   --quiet \

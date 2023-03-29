@@ -4,17 +4,17 @@
 
 function info() {
   local message=$1
-  echo -e "[\033[0;34mINFO\033[0m] $message" >&2
+  echo -e "[\033[0;34minfo\033[0m] $message" >&2
 }
 
 function warn() {
   local message=$1
-  echo -e "[\033[0;33mWARN\033[0m] $message" >&2
+  echo -e "[\033[0;33mwarn\033[0m] $message" >&2
 }
 
 function success() {
   local message=$1
-  echo -e "[ \033[0;32mOK\033[0m ] $message" >&2
+  echo -e "[ \033[0;32mok\033[0m ] $message" >&2
 }
 
 function ask() {
@@ -33,23 +33,23 @@ function symlink () {
   local src=$1 dest=$2
   local action
 
-  info "LINK '$src' to '$dest'…"
+  info "Link '$src' to '$dest'…"
   if is_symlink "$dest"; then
     if [ "$(readlink "$dest")" == "$src" ]; then
-      success "LINK '$dest' ALREADY EXISTS…"
+      success "Link '$dest' already exists…"
       return 0
     else
       ask "File already exists: $dest ($(basename "$src")) [s]kip/[o]override"
       read -r -e -n 1 action </dev/tty
       case "$action" in
         o )
-          warn "REMOVE '$dest'…"
+          warn "Remove '$dest'…"
           rm -rf "$dest"
           ln -s "$src" "$dest"
-          success "LINKED $src TO $dest"
+          success "Linked $src to $dest"
           ;;
         s )
-          success "SKIP SYMLINK $src"
+          success "Skip symlink $src"
           ;;
         * )
           ;;
@@ -57,7 +57,7 @@ function symlink () {
     fi
   else
     ln -s "$src" "$dest"
-    success "LINKED $src TO $dest"
+    success "Linked $src to $dest"
   fi
 }
 

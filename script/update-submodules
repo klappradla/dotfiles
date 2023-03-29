@@ -10,5 +10,5 @@ SCRIPT_DIR=$(dirname "$0")
 source "$SCRIPT_DIR/lib/utils.sh"
 
 cd "$(dirname "$0")/.."
-info "UPDATE GIT SUBMODULES…"
+info "Update GIT submodules…"
 git submodule update --remote
