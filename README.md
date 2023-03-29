@@ -9,9 +9,9 @@ How I set up my dev system.
 My dotfiles follow [holman](https://github.com/holman/dotfiles)'s concept of _"topical"_ organization. Each topic has its own directory with special filename conventions ⚡️:
 
 - **bin/**: contains executables added to `$PATH`
-- **topic/install.sh**: script executed when installing/updating the topic
-- **topic/symlink.sh**: script executed when symlinking the topic
-- **topic/name.symlink**: files picked up by the `symlink.sh` script of the topic
+- **topic/install**: script executed when installing/updating the topic
+- **topic/symlink**: script executed when symlinking the topic
+- **topic/name.symlink**: files picked up by the `symlink` script of the topic
 
 _(Note: the `homebrew` topic is always evaluated first as other topics depend on it.)_
 
