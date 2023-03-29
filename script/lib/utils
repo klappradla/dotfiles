@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Utilities used in other scripts
-
 function info() {
   local message=$1
   echo -e "[\033[0;34minfo\033[0m] $message" >&2

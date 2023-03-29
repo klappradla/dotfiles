@@ -8,8 +8,8 @@ set -o pipefail
 # set -o xtrace
 
 SCRIPT_DIR=$(dirname "$0")
-# shellcheck source=./lib/utils.sh
-source "$SCRIPT_DIR/lib/utils.sh"
+# shellcheck source=./lib/utils
+source "$SCRIPT_DIR/lib/utils"
 
 COMPUTER_NAME=$(scutil --get ComputerName)
 
