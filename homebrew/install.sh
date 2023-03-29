@@ -8,8 +8,8 @@ set -o pipefail
 # set -o xtrace
 
 SCRIPT_DIR=$(dirname "$0")
-# shellcheck source=../script/lib/utils.sh
-source "$SCRIPT_DIR/../script/lib/utils.sh"
+# shellcheck source=../script/lib/utils
+source "$SCRIPT_DIR/../script/lib/utils"
 
 if ! command -v brew >/dev/null; then
   info "Install homebrew…"

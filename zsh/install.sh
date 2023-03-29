@@ -7,7 +7,7 @@ set -o pipefail
 # To debug, uncomment:
 # set -o xtrace
 
-source "../script/lib/utils.sh"
+source "../script/lib/utils"
 
 HOMEBREW_ZSH="$(brew --prefix)/bin/zsh"
 readonly HOMEBREW_ZSH
