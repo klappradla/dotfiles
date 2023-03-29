@@ -10,7 +10,7 @@ set -o pipefail
 source "../script/lib//utils.sh"
 
 declare ASDF_BIN="$HOME/.asdf"
-readonly VERSION="v0.9.0"
+readonly VERSION="v0.11.3"
 
 function add_plugin() {
   local name="$1"
@@ -20,18 +20,18 @@ function add_plugin() {
 }
 
 if [ ! -d "$ASDF_BIN" ]; then
-  info "INSTALL ASDF…"
+  info "INSTALL ASDF FROM GITHUB…"
   git clone \
     "https://github.com/asdf-vm/asdf.git" \
     "$ASDF_BIN" \
     --branch "$VERSION"
-else
-  info "UPDATE ASDF…"
-  asdf update
 fi
 
 # shellcheck source=../../.asdf/asdf.sh
 source "$ASDF_BIN/asdf.sh"
+
+info "UPDATE ASDF…"
+asdf update
 
 add_plugin "ruby"
 add_plugin "nodejs"
