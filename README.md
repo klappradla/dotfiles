@@ -19,7 +19,7 @@ _(Note: the `homebrew` topic is always evaluated first as other topics depend on
 
 _(on new computer: [set up ssh keys](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) first)_
 
-```sh
+```bash
 # start in the home directory
 cd
 
@@ -35,7 +35,7 @@ script/setup
 
 To install topics individually:
 
-```sh
+```bash
 script/install <topic>
 ```
 
