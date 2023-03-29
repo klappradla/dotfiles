@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
+
+SCRIPT_DIR=$(dirname "$0")
+# shellcheck source=./lib/utils
+source "$SCRIPT_DIR/lib/utils"
+
+info "Format Markdown…"
+exec npx prettier --write **/*.md
