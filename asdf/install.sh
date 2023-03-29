@@ -20,17 +20,19 @@ function add_plugin() {
 }
 
 if [ ! -d "$ASDF_BIN" ]; then
-  info "INSTALL ASDF FROM GITHUB…"
+  info "Install asdf from github…"
   git clone \
     "https://github.com/asdf-vm/asdf.git" \
     "$ASDF_BIN" \
     --branch "$VERSION"
+else
+  info "Already installed"
 fi
 
 # shellcheck source=../../.asdf/asdf.sh
 source "$ASDF_BIN/asdf.sh"
 
-info "UPDATE ASDF…"
+info "Update asdf…"
 asdf update
 
 add_plugin "ruby"
@@ -38,5 +40,5 @@ add_plugin "nodejs"
 add_plugin "erlang"
 add_plugin "elixir"
 
-info "UPDATE ASDF PLUGINS…"
+info "Update asdf plugins…"
 asdf plugin-update --all

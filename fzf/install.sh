@@ -11,5 +11,5 @@ source "../script/lib/utils.sh"
 
 brew install fzf
 
-info "INSTALL FZF KEY BINDINGS AND COMPLETION…"
+info "Install fzf key bindings and completion…"
 $(brew --prefix)/opt/fzf/install --no-update-rc

@@ -13,12 +13,12 @@ readonly VIM_PLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/maste
 readonly VIM_PLUG_PATH="$HOME/.local/share/nvim/site/autoload/plug.vim"
 
 if [ ! -f "$VIM_PLUG_PATH" ]; then
-  info "INSTALL VIM PLUG…"
+  info "Install vim-plug…"
   curl -fLo \
     "$VIM_PLUG_PATH" \
     --create-dirs \
     "$VIM_PLUG_URL"
 fi
 
-info "INSTALL NEOVIM PYTHON SUPPORT…"
+info "Install neovim python support…"
 pip3 install --user neovim
