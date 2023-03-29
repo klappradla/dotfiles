@@ -13,10 +13,10 @@ source "$SCRIPT_DIR/lib/utils"
 
 COMPUTER_NAME=$(scutil --get ComputerName)
 
-ask "How should this computer be called? (currently: $COMPUTER_NAME)"
+ask "How should this computer be named? (currently: $COMPUTER_NAME)"
 read -r name
 
-info "Set computer name to '$name'…"
+info "Set name to '$name'…"
 sudo scutil --set ComputerName "$name"
 sudo scutil --set LocalHostName "$name"
 
