@@ -10,8 +10,8 @@ My dotfiles follow [holman](https://github.com/holman/dotfiles)'s concept of _"t
 
 - **bin/**: contains executables added to `$PATH`
 - **topic/install**: script executed when installing/updating the topic
-- **topic/symlink**: script executed when symlinking the topic
-- **topic/name.symlink**: files picked up by the `symlink` script of the topic
+- **topic/link**: script executed when symlinking the topic
+- **topic/name.symlink**: files picked up by the `link` script of the topic
 
 _(Note: the `homebrew` topic is always evaluated first as other topics depend on it.)_
 
