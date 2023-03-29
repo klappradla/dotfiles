@@ -24,9 +24,9 @@ readonly TOPICS
 function install_topic() {
   local topic=$1
   cd "$topic"
-  find . -maxdepth 1 -name install.sh \
+  find . -maxdepth 1 -name install \
     | while read -r installer; do $installer; done
-  find . -maxdepth 1 -name symlink.sh \
+  find . -maxdepth 1 -name symlink \
     | while read -r symlink; do $symlink; done
 }
 
