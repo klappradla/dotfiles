@@ -7,6 +7,6 @@ set -o pipefail
 # To debug, uncomment:
 # set -o xtrace
 
-source "./../script/lib/utils"
+source "../script/lib/utils"
 
 create_symlinks "$(pwd)" "$HOME/Library/Preferences/"
