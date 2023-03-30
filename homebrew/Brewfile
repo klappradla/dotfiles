@@ -3,7 +3,6 @@
 tap 'homebrew/cask'
 tap 'pmeinhardt/tools'
 
-# apps
 cask 'firefox'
 cask 'google-chrome'
 cask 'imageoptim'
@@ -16,7 +15,6 @@ cask 'rectangle'
 cask 'slack'
 cask 'spotify'
 
-# packages
 brew 'autoconf'  # for installing erlang
 brew 'coreutils'
 brew 'gpg'
@@ -26,7 +24,6 @@ brew 'tree'
 brew 'watch'
 brew 'wget'
 
-# dev tools
 brew 'elixir-ls'
 brew 'fd'
 brew 'gh'
@@ -39,5 +36,4 @@ brew 'tmux'
 brew 'yarn'
 brew 'zsh'
 
-# services
 brew 'redis'
