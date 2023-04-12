@@ -37,7 +37,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'                " linting & formatting
 
 Plug 'nvim-lua/plenary.nvim'                          " additional lua functions
 
-Plug 'elixir-editors/vim-elixir',     { 'for': 'elixir' }
+Plug 'elixir-editors/vim-elixir',     { 'for': ['elixir', 'eelixir'] }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
 Plug 'maxmellon/vim-jsx-pretty',      { 'for': 'javascript' }
 Plug 'HerringtonDarkholme/yats.vim',  { 'for': 'typescript' }
