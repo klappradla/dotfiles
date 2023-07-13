@@ -11,6 +11,8 @@ export ERL_EPMD_ADDRESS=127.0.0.1                       # prevent epmd from expo
 export HOMEBREW_BUNDLE_NO_LOCK=1                        # disable lockfile for brew bundle
 export MANPAGER="nvim +Man!"                            # use Neovim as man pager
 
+export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_available
+
 # PATH
 typeset -U PATH path                                    # make PATH an array with unique entries
 export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
