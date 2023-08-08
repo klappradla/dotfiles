@@ -14,6 +14,7 @@ Plug 'junegunn/fzf.vim'                               " additional fzf things
 Plug 'tpope/vim-commentary'                           " shortcuts for commenting in/out
 Plug 'bogado/file-line'                               " open files directly at line number
 Plug 'tpope/vim-eunuch'                               " helpful unix shell commands
+Plug 'tpope/vim-fugitive'
 Plug 'janko-m/vim-test'                               " run tests from within vim
 Plug 'benmills/vimux'                                 " interact with tmux (e.g. for running tests)
 Plug 'tpope/vim-endwise'                              " for automatically adding 'ends' in ruby
