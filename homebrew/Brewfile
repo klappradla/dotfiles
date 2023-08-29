@@ -24,7 +24,6 @@ brew 'tree'
 brew 'watch'
 brew 'wget'
 
-brew 'elixir-ls'
 brew 'fd'
 brew 'gh'
 brew 'git'

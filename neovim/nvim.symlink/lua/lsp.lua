@@ -28,7 +28,7 @@ lspconfig.tsserver.setup({
   capabilities = capabilities,
 })
 lspconfig.elixirls.setup({
-  cmd = { "elixir-ls" },
+  cmd = { "/Users/max/dotfiles/lsp/elixir-ls/language_server.sh" },
   on_attach = on_attach,
   capabilities = capabilities,
 })
