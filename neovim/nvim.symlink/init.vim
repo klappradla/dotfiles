@@ -15,7 +15,7 @@ Plug 'tpope/vim-commentary'                           " shortcuts for commenting
 Plug 'bogado/file-line'                               " open files directly at line number
 Plug 'tpope/vim-eunuch'                               " helpful unix shell commands
 Plug 'tpope/vim-fugitive'
-Plug 'janko-m/vim-test'                               " run tests from within vim
+Plug 'vim-test/vim-test'                              " run tests from within vim
 Plug 'benmills/vimux'                                 " interact with tmux (e.g. for running tests)
 Plug 'tpope/vim-endwise'                              " for automatically adding 'ends' in ruby
 Plug 'machakann/vim-highlightedyank'                  " blink-highlight what gets yanked
@@ -23,6 +23,7 @@ Plug 'editorconfig/editorconfig-vim'                  " accept editorconfig file
 Plug 'pmeinhardt/hmm'                                 " joblogs
 Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}  " Markdown Preview
 Plug 'pmeinhardt/ql', {'do': ':QuickLookCompile'}     " Quick Look
+Plug 'eiginn/netrw'                                   " current version of netrw
 
 Plug 'neovim/nvim-lspconfig'                          " LSP
 
@@ -148,6 +149,8 @@ map <leader>l :TestLast<cr>
 map <leader><space> :Buffers<cr>
 " clear search highlights with ESC in normal mode
 nnoremap <silent><ESC> :noh<return><ESC>
+" copy current filepath
+nnoremap <leader>p :let @* = expand("%")<cr>
 
 """ commands
 command German :set spelllang=de
