@@ -15,6 +15,7 @@ export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_available
 
 # PATH
 typeset -U PATH path                                    # make PATH an array with unique entries
+export PATH="$HOME/.local/bin:$PATH"                    # local bin
 export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
 export PATH="/usr/local/opt/openssl/bin:$PATH"          # add openssl from Homebrew
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
