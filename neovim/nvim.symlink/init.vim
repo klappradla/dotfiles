@@ -1,6 +1,7 @@
 """" pre-config
 let g:loaded_ruby_provider = 0                        " disable Ruby provider
 let g:python3_host_prog = '/usr/bin/python3'          " use system Python
+let g:plantuml_set_makeprg = 0
 
 """"""
 """ plugins
@@ -44,6 +45,7 @@ Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
 Plug 'maxmellon/vim-jsx-pretty',      { 'for': 'javascript' }
 Plug 'HerringtonDarkholme/yats.vim',  { 'for': 'typescript' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'aklt/plantuml-syntax'
 call plug#end()
 
 """"""
