@@ -36,7 +36,7 @@ Plug 'hrsh7th/cmp-path'                               " path completion
 Plug 'dcampos/cmp-snippy'                             " snippet completion
 Plug 'hrsh7th/nvim-cmp'                               " completion framework
 
-Plug 'jose-elias-alvarez/null-ls.nvim'                " linting & formatting
+Plug 'nvimtools/none-ls.nvim'                         " linting & formatting
 
 Plug 'nvim-lua/plenary.nvim'                          " additional lua functions
 
@@ -164,5 +164,5 @@ set completeopt=menu,menuone,noselect
 """ lua
 :lua require('lsp')
 :lua require('completion')
-:lua require('nullls')
+:lua require('nonels')
 :lua require('snippets')
