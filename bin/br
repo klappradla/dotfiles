@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Fuzzy find and checkout Git branches.
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
+
+function help() {
+  echo "Usage:"
+  echo ""
+  echo "  br [option]"
+  echo ""
+  echo "  Options:"
+  echo "    -h --help     Show this message"
+  echo "    -l --local    Search local branches only"
+  echo "    -a --all      Search local and remote branches (default)"
+}
+
+function fuzzy_checkout() {
+  local branches
+  local branch
+  branches="$1"
+  branch=$(echo "$branches" | fzf-tmux -p)
+  git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
+}
+
+case "${1:---all}" in
+  "-h" | "--help")
+    help
+    exit 0
+    ;;
+  "-l" | "--local")
+    branches=$(git branch | grep -v HEAD)
+    fuzzy_checkout "$branches"
+    ;;
+  "-a" | "--all")
+    branches=$(git branch --all | grep -v HEAD)
+    fuzzy_checkout "$branches"
+    ;;
+  *)
+    echo >&2 "Unexpected option: $*"
+    exit 1
+    ;;
+esac

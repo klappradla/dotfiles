@@ -61,14 +61,6 @@ if which pyenv > /dev/null; then                        # pyenv
 fi
 
 # functions
-br() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
 custom_prompt_pure_clear_screen() {
   zle -I                   # Enable output to terminal.
   print -n '\e[2J\e[4;0H'  # Clear screen and move cursor to (4, 0).
