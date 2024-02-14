@@ -112,6 +112,7 @@ hi! link markdownBold Bold
 let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'elixir', 'json', 'javascript', 'html']
 let g:markdown_folding = 1                            " enable folding sections on headers in markdown files
 au FileType markdown setlocal foldlevel=99            " start with folds open
+let g:markdown_recommended_style = 0                  " stop Neovim from defaulting to 4 spaces indentation in markdown
 
 """ plugin settings
 let test#strategy = "vimux"                           " run tests in tmux split
