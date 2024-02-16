@@ -8,16 +8,13 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
   sources = {
     diagnostics.ansiblelint,
-    diagnostics.eslint,
     diagnostics.rubocop.with({
       method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
     }),
     diagnostics.selene,
     diagnostics.yamllint,
     --
-    code_actions.eslint,
-    --
-    formatting.eslint,
+    -- TODO: use jsonls instead of jq
     formatting.jq,
     formatting.prettier,
     formatting.rubocop,
