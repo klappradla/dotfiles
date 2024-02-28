@@ -1,6 +1,12 @@
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
+
 local lspconfig = require("lspconfig")
-local util = require 'lspconfig.util'
+local util = require("lspconfig.util")
 local cmp_lsp = require("cmp_nvim_lsp")
+
+mason.setup()
+mason_lspconfig.setup()
 
 local capabilities = cmp_lsp.default_capabilities()
 
@@ -29,10 +35,9 @@ lspconfig.tsserver.setup({
   capabilities = capabilities,
 })
 lspconfig.elixirls.setup({
-  cmd = { "/Users/max/dotfiles/lsp/elixir-ls/language_server.sh" },
   root_dir = function(fname)
     -- For better usage with monorepos: search fro a mix.exs file first
-    return util.root_pattern 'mix.exs'(fname) or util.find_git_ancestor(fname) or vim.loop.os_homedir()
+    return util.root_pattern("mix.exs")(fname) or util.find_git_ancestor(fname) or vim.loop.os_homedir()
   end,
   on_attach = on_attach,
   capabilities = capabilities,
