@@ -6,7 +6,7 @@ local util = require("lspconfig.util")
 local cmp_lsp = require("cmp_nvim_lsp")
 
 mason.setup()
-mason_lspconfig.setup()
+mason_lspconfig.setup({ ensure_installed = { "elixirls", "tsserver" } })
 
 local capabilities = cmp_lsp.default_capabilities()
 
