@@ -26,7 +26,9 @@ Plug 'pmeinhardt/maxdown', {'do': ':MaxdownCompile'}  " Markdown Preview
 Plug 'pmeinhardt/ql', {'do': ':QuickLookCompile'}     " Quick Look
 Plug 'eiginn/netrw'                                   " current version of netrw
 
-Plug 'neovim/nvim-lspconfig'                          " LSP
+Plug 'williamboman/mason.nvim'                        " LSP
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
 
 Plug 'dcampos/nvim-snippy'                            " snippets
 
