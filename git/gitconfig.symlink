@@ -13,6 +13,12 @@
                 | xargs git branch -D;\
               }; f"
   update = "!git fetch && git pull && git housekeep"
+  pr-subject = "!f(){\
+                 git log ${1:-origin/main}..$(git branch --show-current) \
+                 --oneline \
+                 --pretty=%s \
+                 | tail -n 1;\
+               }; f"
 [includeIf "gitdir:code/klappradla/"]
   path = ~/.gitconfig_personal
 [includeIf "gitdir:code/bitcrowd/"]
