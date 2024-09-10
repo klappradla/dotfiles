@@ -1,8 +1,8 @@
 vim.o.background = "dark"
 
-require("solarized").setup({
-  transparent = { enabled = false },
-  palette = "solarized",
+require("neosolarized").setup({
+  comment_italics = false,
+  background_set = true,
 })
 
-vim.cmd.colorscheme("solarized")
+vim.cmd.colorscheme("neosolarized")

@@ -9,6 +9,8 @@ let g:plantuml_set_makeprg = 0
 call plug#begin()
 Plug 'maxmx03/solarized.nvim'
 Plug 'morhetz/gruvbox'
+Plug 'svrana/neosolarized.nvim'
+Plug 'tjdevries/colorbuddy.nvim'
 
 Plug 'mileszs/ack.vim'                                " project-wide search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " fzf executable
