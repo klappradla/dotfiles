@@ -7,7 +7,8 @@ let g:plantuml_set_makeprg = 0
 """ plugins
 """"""
 call plug#begin()
-Plug 'overcache/NeoSolarized'
+Plug 'maxmx03/solarized.nvim'
+Plug 'morhetz/gruvbox'
 
 Plug 'mileszs/ack.vim'                                " project-wide search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " fzf executable
@@ -102,10 +103,6 @@ let g:netrw_banner = 0                                " remove banner on top
 
 """ colors
 set colorcolumn=80,120                                " highlight column at 80 and 120 characters
-set termguicolors                                     " use true colors
-set background=dark                                   " use a dark background
-colorscheme NeoSolarized
-let g:neosolarized_vertSplitBgTrans = 1               " transparent split bars
 
 """ markdown
 au FileType markdown setlocal wrap                    " wrap lines in markdown files
@@ -169,3 +166,4 @@ set completeopt=menu,menuone,noselect
 :lua require('completion')
 :lua require('nonels')
 :lua require('snippets')
+:lua require('color')
