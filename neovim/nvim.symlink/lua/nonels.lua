@@ -12,13 +12,12 @@ null_ls.setup({
       method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
     }),
     diagnostics.selene,
+    diagnostics.stylelint,
     diagnostics.yamllint,
-    --
-    -- TODO: use jsonls instead of jq
-    formatting.jq,
     formatting.prettier,
     formatting.rubocop,
     formatting.stylua,
+    formatting.stylelint,
   },
   on_attach = lsp.on_attach,
 })

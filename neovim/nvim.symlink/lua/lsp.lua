@@ -6,7 +6,7 @@ local util = require("lspconfig.util")
 local cmp_lsp = require("cmp_nvim_lsp")
 
 mason.setup()
-mason_lspconfig.setup({ ensure_installed = { "elixirls", "tsserver" } })
+mason_lspconfig.setup({ ensure_installed = { "elixirls", "ts_ls" } })
 
 local capabilities = cmp_lsp.default_capabilities()
 
@@ -30,7 +30,7 @@ local on_attach = function(_client, bufnr)
 end
 
 -- Language servers
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
