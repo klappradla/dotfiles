@@ -2,8 +2,10 @@
 
 tap 'homebrew/cask'
 tap 'pmeinhardt/tools'
+tap 'homebrew/cask-versions'
 
 cask 'firefox'
+cas 'homebrew/cask-versions/firefox-developer-edition'
 cask 'google-chrome'
 cask 'imageoptim'
 cask 'iterm2'
