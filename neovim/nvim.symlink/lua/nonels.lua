@@ -7,6 +7,7 @@ local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
   sources = {
+    require("none-ls.formatting.jq"),
     diagnostics.ansiblelint,
     diagnostics.rubocop.with({
       method = null_ls.methods.DIAGNOSTICS_ON_SAVE,

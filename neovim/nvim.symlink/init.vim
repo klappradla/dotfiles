@@ -42,6 +42,7 @@ Plug 'dcampos/cmp-snippy'                             " snippet completion
 Plug 'hrsh7th/nvim-cmp'                               " completion framework
 
 Plug 'nvimtools/none-ls.nvim'                         " linting & formatting
+Plug 'nvimtools/none-ls-extras.nvim'
 
 Plug 'nvim-lua/plenary.nvim'                          " additional lua functions
 
