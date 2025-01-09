@@ -1,15 +1,18 @@
 theme = Builtin Solarized Dark
 window-padding-x = 4
 
-font-family = Monaco
-font-thicken = true
+font-family = "Jetbrains Mono"
 font-size = 14
+font-thicken = true
+# Disable ligatures
+font-feature = -calt
 
-adjust-cell-height = 8%
-adjust-underline-position = 10%
+# Give letters a bit more room
+adjust-cell-height = 10%
 
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
 
+# No warning dialogue before closing
 confirm-close-surface = false
