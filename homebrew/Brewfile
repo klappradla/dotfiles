@@ -1,43 +1,33 @@
 # frozen_string_literal: true
 
-tap 'homebrew/cask'
-tap 'pmeinhardt/tools'
-tap 'homebrew/cask-versions'
-
 cask 'firefox'
-cask 'homebrew/cask-versions/firefox-developer-edition'
 cask 'font-jetbrains-mono'
 cask 'ghostty'
-cask 'google-chrome'
-cask 'imageoptim'
-cask 'iterm2'
 cask 'karabiner-elements'
 cask 'keepassxc'
-cask 'nextcloud'
-cask 'postgres-unofficial'
 cask 'rectangle'
-cask 'slack'
-cask 'spotify'
 
-brew 'autoconf'  # for installing erlang
 brew 'coreutils'
-brew 'gpg'
-brew 'pmeinhardt/tools/bun'  # remove brew formulas with leaves
-brew 'pmeinhardt/tools/hmm'
-brew 'tree'
-brew 'watch'
-brew 'wget'
-
 brew 'fd'
 brew 'gh'
 brew 'git'
+brew 'lua'
 brew 'jq'
 brew 'neovim'
 brew 'overmind'
-brew 'plantuml'
 brew 'rg'
+brew 'rust'
 brew 'tmux'
-brew 'yarn'
+brew 'wget'
 brew 'zsh'
 
-brew 'redis'
+if ENV["HOMEBREW_WORK"]
+  cask '1password'
+  cask '1password-cli'
+  cask 'docker-desktop'
+  cask 'firefox@developer-edition'
+  cask 'imageoptim'
+  cask 'kap'
+  cask 'postgres-unofficial'
+  cask 'slack'
+end

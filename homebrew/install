@@ -26,7 +26,6 @@ fi
 
 info "Install apps and packages…"
 brew bundle \
-  --no-lock \
   --quiet \
   --no-upgrade \
   --file "$SCRIPT_DIR/Brewfile"

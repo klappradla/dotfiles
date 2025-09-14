@@ -19,6 +19,3 @@ if [ ! -f "$VIM_PLUG_PATH" ]; then
     --create-dirs \
     "$VIM_PLUG_URL"
 fi
-
-info "Install neovim python support…"
-pip3 install --user neovim

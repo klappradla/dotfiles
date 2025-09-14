@@ -39,6 +39,8 @@ To install topics individually:
 script/install <topic>
 ```
 
+To install _work_ specific stuff, set the `HOMEBREW_WORK` environment variable.
+
 ## Tips & Tricks
 
 - Change/disable macOS' default keyboard shortcuts for _"Input Sources"_ if you want to use <kbd>CTRL</kbd> + <kbd>Space</kbd> as prefix in Tmux.
