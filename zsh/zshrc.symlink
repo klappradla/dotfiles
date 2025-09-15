@@ -50,9 +50,9 @@ bindkey -e                                              # emacs keybindings
 bindkey "${terminfo[kcbt]}" reverse-menu-complete       # shift-tab for reverse completion menu
 
 # tools
-if [ -f "$HOME/.asdf/asdf.sh" ]; then                   # asdf
-  source $HOME/.asdf/asdf.sh
-  fpath=(${ASDF_DIR}/completions $fpath)
+if [ -f "/opt/homebrew/asdf" ]; then                   # asdf
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+  fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
 if which pyenv > /dev/null; then                        # pyenv

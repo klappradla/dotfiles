@@ -10,30 +10,24 @@ set -o pipefail
 source "../script/lib//utils"
 
 declare ASDF_BIN="$HOME/.asdf"
-readonly VERSION="v0.11.3"
 
 function add_plugin() {
   local name="$1"
-  if ! asdf plugin-list | grep -Fq "$name"; then
-    asdf plugin-add "$name"
+  if ! asdf plugin list | grep -Fq "$name"; then
+    asdf plugin add "$name"
   fi
 }
 
 if [ ! -d "$ASDF_BIN" ]; then
-  info "Install asdf from github…"
-  git clone \
-    "https://github.com/asdf-vm/asdf.git" \
-    "$ASDF_BIN" \
-    --branch "$VERSION"
+  brew install asdf
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 else
   info "Already installed"
 fi
 
-# shellcheck source=../../.asdf/asdf.sh
-source "$ASDF_BIN/asdf.sh"
+mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
 
-info "Update asdf…"
-asdf update
 
 add_plugin "ruby"
 add_plugin "nodejs"
@@ -41,4 +35,4 @@ add_plugin "erlang"
 add_plugin "elixir"
 
 info "Update asdf plugins…"
-asdf plugin-update --all
+asdf plugin update --all
