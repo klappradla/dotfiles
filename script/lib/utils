@@ -72,3 +72,7 @@ function create_symlinks() {
     symlink "$src" "$dest"
   done
 }
+
+function use_brew() {
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+}
