@@ -35,6 +35,7 @@ lspconfig.ts_ls.setup({
   capabilities = capabilities,
 })
 lspconfig.elixirls.setup({
+  cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" },
   root_dir = function(fname)
     -- For better usage with monorepos: search fro a mix.exs file first
     return util.root_pattern("mix.exs")(fname) or util.find_git_ancestor(fname) or vim.loop.os_homedir()
