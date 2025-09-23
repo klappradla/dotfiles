@@ -1,8 +1,5 @@
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
-
-local lspconfig = require("lspconfig")
-local util = require("lspconfig.util")
 local cmp_lsp = require("cmp_nvim_lsp")
 
 mason.setup()
@@ -30,16 +27,14 @@ local on_attach = function(_client, bufnr)
 end
 
 -- Language servers
-lspconfig.ts_ls.setup({
+vim.lsp.config("ts_ls", {
   on_attach = on_attach,
   capabilities = capabilities,
 })
-lspconfig.elixirls.setup({
+vim.lsp.config("elixirls", {
   cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" },
-  root_dir = function(fname)
-    -- For better usage with monorepos: search fro a mix.exs file first
-    return util.root_pattern("mix.exs")(fname) or util.find_git_ancestor(fname) or vim.loop.os_homedir()
-  end,
+  -- For better usage with monorepos: search for a mix.exs file first
+  root_dir = vim.fs.root(0, { "mix.exs", ".git" }) or vim.loop.os_homedir(),
   on_attach = on_attach,
   capabilities = capabilities,
 })
