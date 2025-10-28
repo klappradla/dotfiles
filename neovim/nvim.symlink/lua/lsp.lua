@@ -3,7 +3,7 @@ local mason_lspconfig = require("mason-lspconfig")
 local cmp_lsp = require("cmp_nvim_lsp")
 
 mason.setup()
-mason_lspconfig.setup({ ensure_installed = { "elixirls", "ts_ls" } })
+mason_lspconfig.setup({ ensure_installed = { "elixirls", "ts_ls", "ruby_lsp" } })
 
 local capabilities = cmp_lsp.default_capabilities()
 
@@ -35,6 +35,10 @@ vim.lsp.config("elixirls", {
   cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" },
   -- For better usage with monorepos: search for a mix.exs file first
   root_dir = vim.fs.root(0, { "mix.exs", ".git" }) or vim.loop.os_homedir(),
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+vim.lsp.config("ruby_lsp", {
   on_attach = on_attach,
   capabilities = capabilities,
 })
