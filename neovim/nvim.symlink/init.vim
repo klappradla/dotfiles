@@ -40,7 +40,8 @@ Plug 'hrsh7th/cmp-buffer'                             " buffer completion
 Plug 'hrsh7th/cmp-path'                               " path completion
 Plug 'dcampos/cmp-snippy'                             " snippet completion
 Plug 'hrsh7th/nvim-cmp'                               " completion framework
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
+Plug 'supermaven-inc/supermaven-nvim'
 
 Plug 'nvimtools/none-ls.nvim'                         " linting & formatting
 Plug 'nvimtools/none-ls-extras.nvim'
