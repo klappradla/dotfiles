@@ -113,3 +113,4 @@ fi
 
 # plugins
 source $ZSH_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_DIR/plugins/functions.zsh
