@@ -107,6 +107,9 @@ prompt pure
 # https://gist.github.com/ctechols/ca1035271ad134841284
 autoload -Uz compinit && compinit -d $HOME/.zcompdump   # load completion
 autoload bashcompinit && bashcompinit                   # load bash completion
+if which kubectl > /dev/null; then                      # kubectl completion
+  source <(kubectl completion zsh)
+fi
 
 # plugins
 source $ZSH_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
