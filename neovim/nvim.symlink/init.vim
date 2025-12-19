@@ -53,6 +53,7 @@ Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
 Plug 'maxmellon/vim-jsx-pretty',      { 'for': 'javascript' }
 Plug 'HerringtonDarkholme/yats.vim',  { 'for': 'typescript' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'rust-lang/rust.vim',            { 'for': 'rust' }
 Plug 'aklt/plantuml-syntax'
 call plug#end()
 
