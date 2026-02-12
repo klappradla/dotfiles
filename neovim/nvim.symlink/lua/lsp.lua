@@ -41,6 +41,13 @@ vim.lsp.config("elixirls", {
 vim.lsp.config("ruby_lsp", {
   on_attach = on_attach,
   capabilities = capabilities,
+  init_options = {
+    addonSettings = {
+      ["Ruby LSP Rails"] = {
+        enablePendingMigrationsPrompt = false,
+      },
+    },
+  },
 })
 
 return { on_attach = on_attach }
