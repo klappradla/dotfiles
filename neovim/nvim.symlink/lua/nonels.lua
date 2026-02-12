@@ -9,6 +9,7 @@ null_ls.setup({
   sources = {
     require("none-ls.formatting.jq"),
     diagnostics.ansiblelint,
+    diagnostics.haml_lint,
     diagnostics.rubocop.with({
       method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
     }),
