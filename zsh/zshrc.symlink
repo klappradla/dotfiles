@@ -91,6 +91,8 @@ alias gco="git checkout"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
 
+alias todo="vim ~/Desktop/TODO.md"
+
 # locals
 if [[ -a ~/.localrc ]]
 then
