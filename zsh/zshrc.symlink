@@ -60,7 +60,7 @@ if which pyenv > /dev/null; then                        # pyenv
   eval "$(pyenv init --path)";
   eval "$(pyenv init - zsh --no-rehash)";
 fi
-source "$HOME/.cargo/env"                               # rust
+[ -f "$HOME/cargo/env" ] && source "$HOME/.cargo/env"   # rust
 
 
 # functions
