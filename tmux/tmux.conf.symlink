@@ -33,6 +33,13 @@ set-option -w -g automatic-rename on
 # refresh the status line every second
 set -g status-interval 1
 
+# let notifications through
+set -g allow-passthrough on
+
+# distinguish more keys (such as shift + enter vs. enter)
+set -s extended-keys on
+set -as terminal-features 'xterm*:extkeys'
+
 # use vim motion in copy mode
 setw -g mode-keys vi
 
