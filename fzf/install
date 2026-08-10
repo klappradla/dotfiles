@@ -9,6 +9,7 @@ set -o pipefail
 
 source "../script/lib/utils"
 
+use_brew
 brew install fzf
 
 info "Install fzf key bindings and completion…"

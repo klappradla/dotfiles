@@ -9,6 +9,8 @@ set -o pipefail
 
 source "../script/lib/utils"
 
+use_brew
+
 HOMEBREW_ZSH="$(brew --prefix)/bin/zsh"
 readonly HOMEBREW_ZSH
 

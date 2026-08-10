@@ -20,4 +20,7 @@ info "Set name to '$name'…"
 sudo scutil --set ComputerName "$name"
 sudo scutil --set LocalHostName "$name"
 
+info "Create ~/.config directory if it does not exist…"
+mkdir -p ~/.config
+
 "$SCRIPT_DIR/install"
