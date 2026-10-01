@@ -23,6 +23,8 @@
   path = ~/.gitconfig_personal
 [includeIf "gitdir:code/bitcrowd/"]
   path = ~/.gitconfig_work
+[includeIf "gitdir:code/opf/"]
+  path = ~/.gitconfig_work
 [core]
   excludesfile = ~/.gitignore_global
 [status]
