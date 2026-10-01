@@ -47,6 +47,7 @@ Plug 'nvimtools/none-ls.nvim'                         " linting & formatting
 Plug 'nvimtools/none-ls-extras.nvim'
 
 Plug 'nvim-lua/plenary.nvim'                          " additional lua functions
+Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'elixir-editors/vim-elixir',     { 'for': ['elixir', 'eelixir'] }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
@@ -55,6 +56,7 @@ Plug 'HerringtonDarkholme/yats.vim',  { 'for': 'typescript' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'rust-lang/rust.vim',            { 'for': 'rust' }
 Plug 'aklt/plantuml-syntax'
+Plug 'davidmh/mdx.nvim'
 call plug#end()
 
 """"""
