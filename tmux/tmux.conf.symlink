@@ -1,6 +1,7 @@
-# enable true color support
-set -g default-terminal "xterm-256color"
-set-option -ga terminal-overrides ",xterm-256color:Tc"
+# enable true color support in Ghostty
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+set -ga terminal-overrides ",xterm-ghostty:Tc"
 
 # enable focus events
 set -g focus-events on

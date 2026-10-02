@@ -16,3 +16,6 @@ cursor-style-blink = false
 
 # No warning dialogue before closing
 confirm-close-surface = false
+
+# set terminal info for tmux and other programs
+term = "xterm-ghostty"
