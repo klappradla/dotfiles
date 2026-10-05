@@ -21,10 +21,10 @@ function ask() {
   echo -en "[ \033[0;33m!!\033[0m ] " >&2
 }
 
-function is_symlink() {
+function path_exists() {
   local dest=$1
-  # NOTE: checks if dest is a file, directory or symlink
-  [ -f "$dest" ]  || [ -d "$dest" ] || [ -L "$dest" ]
+  # -e: anything exists, -L: catch (broken) symlinks
+  [ -e "$dest" ]  || [ -L "$dest" ]
 }
 
 function symlink () {
@@ -32,17 +32,19 @@ function symlink () {
   local action
 
   info "Link '$src' to '$dest'…"
-  if is_symlink "$dest"; then
+  if path_exists "$dest"; then
     if [ "$(readlink "$dest")" == "$src" ]; then
       success "Link '$dest' already exists…"
       return 0
     else
-      ask "File already exists: $dest ($(basename "$src")) [s]kip/[o]override"
+      ask "File already exists: $dest ($(basename "$src")) [s]kip/[o]overwrite"
       read -r -e -n 1 action </dev/tty
       case "$action" in
         o )
-          warn "Remove '$dest'…"
-          rm -rf "$dest"
+          local backup
+          backup="$dest.backup.$(date +%Y-%m-%d-%H:%M:%S)"
+          warn "Move '$dest' to '$dest.backup'…"
+          mv "$dest" "$backup"
           ln -s "$src" "$dest"
           success "Linked $src to $dest"
           ;;
@@ -50,6 +52,7 @@ function symlink () {
           success "Skip symlink $src"
           ;;
         * )
+          warn "Unknown option '$action', skip $src"
           ;;
       esac
     fi
