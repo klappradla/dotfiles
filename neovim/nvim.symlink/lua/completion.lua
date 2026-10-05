@@ -32,9 +32,9 @@ cmp.setup({
 })
 
 supermaven.setup({
-   keymaps = {
+  keymaps = {
     accept_suggestion = "<tab>",
-  }
+  },
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
