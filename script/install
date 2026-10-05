@@ -33,11 +33,11 @@ function install_topic() {
 if [ $# -lt 1 ]; then
   info "Install topics…"
   install_topic "$DOTS_DIR/homebrew"
-  for topic in ${TOPICS[*]}; do
+  for topic in "${TOPICS[@]}"; do
     install_topic "$topic"
   done
 else
-  TOPIC=$(echo "$1" |  tr '[A-Z]' '[a-z]')
-  info "Install "$TOPIC" topic…"
+  TOPIC=$(echo "$1" |  tr '[:upper]' '[:lower]')
+  info "Install $TOPIC topic…"
   install_topic "$DOTS_DIR/$TOPIC"
 fi
