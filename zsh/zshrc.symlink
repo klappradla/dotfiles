@@ -18,7 +18,6 @@ export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_available
 typeset -U PATH path                                    # make PATH an array with unique entries
 export PATH="$HOME/.local/bin:$PATH"                    # local bin
 export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
-export PATH="/usr/local/opt/openssl/bin:$PATH"          # add openssl from Homebrew
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # configure completion
@@ -29,20 +28,17 @@ zstyle ':completion:*' squeeze-slashes true             # treat multiple slashes
 zstyle ':completion:*' use-cache yes                    # cache completion
 zstyle ':completion:*' cache-path $HOME/.zcompcache     # completion cache directory
 
-# histoy
+# history
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=50000
-SAVEHIST=10000
+SAVEHIST=50000
 
 # options
 setopt hist_find_no_dups                                # no duplicates in history
 setopt hist_ignore_all_dups                             # ignore all duplicates
 setopt extended_history                                 # record timestamp of command
-setopt hist_expire_dups_first                           # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups                                 # ignore duplicated in commands history list
 setopt hist_ignore_space                                # ignore commands that start with space
 setopt hist_verify                                      # show command with history expansion to user before running it
-setopt inc_append_history                               # all sessions write to same history
 setopt share_history                                    # all sessions read same history
 setopt nolistbeep                                       # surpress beep for autocompletion
 setopt auto_menu                                        # show completion menu on successive tab press
@@ -56,11 +52,11 @@ if [ -f "/opt/homebrew/bin/asdf" ]; then                # asdf
   fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
-if which pyenv > /dev/null; then                        # pyenv
+if command -v pyenv > /dev/null; then                   # pyenv
   eval "$(pyenv init --path)";
   eval "$(pyenv init - zsh --no-rehash)";
 fi
-[ -f "$HOME/cargo/env" ] && source "$HOME/.cargo/env"   # rust
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"  # rust
 
 
 # functions
@@ -106,11 +102,18 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # init completion
-# TODO: speed this up by only loading every 24h
-# https://gist.github.com/ctechols/ca1035271ad134841284
-autoload -Uz compinit && compinit -d $HOME/.zcompdump   # load completion
+# Only load completion every 24 hours
+autoload -Uz compinit
+stale_dump=($HOME/.zcompdump(N.mh+24))
+if (( $#stale_dump )); then
+  compinit -d $HOME/.zcompdump
+else
+  compinit -C -d $HOME/.zcompdump
+fi
+unset stale_dump
+
 autoload bashcompinit && bashcompinit                   # load bash completion
-if which kubectl > /dev/null; then                      # kubectl completion
+if command -v kubectl > /dev/null; then                 # kubectl completion
   source <(kubectl completion zsh)
 fi
 
