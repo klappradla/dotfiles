@@ -34,7 +34,9 @@ vim.lsp.config("ts_ls", {
 vim.lsp.config("elixirls", {
   cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" },
   -- For better usage with monorepos: search for a mix.exs file first
-  root_dir = vim.fs.root(0, { "mix.exs", ".git" }) or vim.loop.os_homedir(),
+  root_dir = function(bufnr, on_dir)
+    on_dir(vim.fs.root(bufnr, { "mix.exs", ".git" }) or vim.fs.dirname(vim.api.nvim_buf_get_name(bufnr)))
+  end,
   on_attach = on_attach,
   capabilities = capabilities,
 })
