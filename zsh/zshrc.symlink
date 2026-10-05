@@ -12,13 +12,12 @@ export HOMEBREW_BUNDLE_NO_LOCK=1                        # disable lockfile for b
 export MANPAGER="nvim +Man!"                            # use Neovim as man pager
 export COREPACK_ENABLE_AUTO_PIN=0                       # prevent corepack from updating package.json with packageManager field
 
-export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_available
-
 # PATH
 typeset -U PATH path                                    # make PATH an array with unique entries
 export PATH="$HOME/.local/bin:$PATH"                    # local bin
 export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+[ -d "${KREW_ROOT:-$HOME/.krew}/bin" ] && export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # configure completion
 zstyle ':completion:*' list-colors ''                   # use LSCOLORS list colors for completion
@@ -47,9 +46,8 @@ bindkey -e                                              # emacs keybindings
 bindkey "${terminfo[kcbt]}" reverse-menu-complete       # shift-tab for reverse completion menu
 
 # tools
-if [ -f "/opt/homebrew/bin/asdf" ]; then                # asdf
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-  fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+if [ -f ~/.local/bin/mise ]; then                       # mise
+  eval "$(~/.local/bin/mise activate zsh)"
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
 if command -v pyenv > /dev/null; then                   # pyenv
