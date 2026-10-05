@@ -50,7 +50,7 @@ Plug 'nvim-lua/plenary.nvim'                          " additional lua functions
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'elixir-editors/vim-elixir',     { 'for': ['elixir', 'eelixir'] }
-Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
+Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
 Plug 'maxmellon/vim-jsx-pretty',      { 'for': 'javascript' }
 Plug 'HerringtonDarkholme/yats.vim',  { 'for': 'typescript' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
@@ -124,8 +124,14 @@ let g:markdown_recommended_style = 0                  " stop Neovim from default
 """ plugin settings
 let test#strategy = "vimux"                           " run tests in tmux split
 let g:ackprg = 'rg --vimgrep --no-heading'            " use ripgrep for Ack
+
+""" filetype detection
 au BufRead,BufNewFile Brewfile setfiletype ruby       " use ruby syntax in brewfiles
 au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+" fix syntax highlighting for *.symlink files
+au BufRead,BufNewFile *.symlink
+  \ exe 'doautocmd filetypedetect BufRead ' . fnameescape(expand('<afile>:h') . '/.' . expand('<afile>:t:r')) |
+  \ exe 'doautocmd filetypedetect BufRead ' . fnameescape(expand('<afile>:r'))
 
 """ fzf
 " use 'fd', show hidden files, exclude gitignored files
