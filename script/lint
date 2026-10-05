@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
+
+SCRIPT_DIR=$(dirname "$0")
+# shellcheck source=./lib/utils
+source "$SCRIPT_DIR/lib/utils"
+
+cd "$SCRIPT_DIR/.."
+
+require_tool shellcheck
+require_tool stylua
+
+failed=0
+
+info "Lint shell scripts…"
+shellcheck bin/* ./*/install ./*/link script/lib/utils script/setup script/format script/lint script/update-submodules || failed=1
+
+info "Lint Lua…"
+stylua --check neovim/ || failed=1
+
+[ $failed -ne 0 ] && exit 1

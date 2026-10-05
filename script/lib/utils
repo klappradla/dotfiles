@@ -15,6 +15,19 @@ function success() {
   echo -e "[ \033[0;32mOK\033[0m ] $message" >&2
 }
 
+function error() {
+  local message=$1
+  echo -e "[\033[0;31mFAIL\033[0m] $message" >&2
+}
+
+function require_tool() {
+  local tool=$1
+  if ! command -v "$tool" >/dev/null; then
+    error "Please install $tool"
+    exit 1
+  fi
+}
+
 function ask() {
   local message=$1
   echo -e "[ \033[0;33m??\033[0m ] $message" >&2

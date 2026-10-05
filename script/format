@@ -11,5 +11,13 @@ SCRIPT_DIR=$(dirname "$0")
 # shellcheck source=./lib/utils
 source "$SCRIPT_DIR/lib/utils"
 
+cd "$SCRIPT_DIR/.."
+
+require_tool stylua
+require_tool npx
+
+info "Format Lua…"
+stylua neovim/
+
 info "Format Markdown…"
-exec npx prettier --write ./*.md
+npx prettier --write ./*.md
