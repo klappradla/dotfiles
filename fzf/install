@@ -12,4 +12,4 @@ source "../script/lib/utils"
 brew install fzf
 
 info "Install fzf key bindings and completion…"
-$(brew --prefix)/opt/fzf/install --no-update-rc
+"$(brew --prefix)/opt/fzf/install" --no-update-rc

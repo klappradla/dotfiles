@@ -12,4 +12,4 @@ SCRIPT_DIR=$(dirname "$0")
 source "$SCRIPT_DIR/lib/utils"
 
 info "Format Markdown…"
-exec npx prettier --write **/*.md
+exec npx prettier --write ./*.md
