@@ -8,7 +8,12 @@ mason_lspconfig.setup({ ensure_installed = { "elixirls", "ts_ls", "ruby_lsp" } }
 local capabilities = cmp_lsp.default_capabilities()
 
 local format_buffer = function()
-  vim.lsp.buf.format({ async = true })
+  vim.lsp.buf.format({
+    async = true,
+    filter = function(client)
+      return vim.bo.filetype ~= "eruby" or client.name == "null-ls"
+    end,
+  })
 end
 
 -- Mappings

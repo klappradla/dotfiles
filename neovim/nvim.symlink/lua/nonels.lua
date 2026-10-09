@@ -16,6 +16,7 @@ null_ls.setup({
     diagnostics.selene,
     diagnostics.stylelint,
     diagnostics.yamllint,
+    formatting.erb_lint,
     formatting.prettier,
     formatting.rubocop,
     formatting.stylua,
