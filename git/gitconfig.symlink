@@ -14,7 +14,7 @@
               }; f"
   update = "!git fetch && git pull && git housekeep"
   pr-subject = "!f(){\
-                 git log ${1:-origin/main}..$(git branch --show-current) \
+                 git log ${1:-origin/HEAD}..$(git branch --show-current) \
                  --oneline \
                  --pretty=%s \
                  | tail -n 1;\
