@@ -97,5 +97,10 @@ set -g window-status-current-style bg=cyan,fg=black
 set -g window-status-separator ""
 # Window status alignment
 set -g status-justify centre
+# Pane borders
+set -g pane-border-style fg=brightblack
+set -g pane-active-border-style fg=cyan
+set -g pane-border-lines heavy
+set -g pane-border-indicators both
 # left status bar (spacegame...)
 set-option -g status-right '#{?client_prefix, space ,#{?pane_in_mode,   copy ,       }}'
