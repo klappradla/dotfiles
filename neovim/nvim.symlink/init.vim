@@ -123,6 +123,7 @@ let g:markdown_recommended_style = 0                  " stop Neovim from default
 
 """ plugin settings
 let test#strategy = "vimux"                           " run tests in tmux split
+let g:VimuxRunnerQuery = { 'pane': '{bottom-right}' } " use the bottom-right pane as test runner
 let g:ackprg = 'rg --vimgrep --no-heading'            " use ripgrep for Ack
 
 """ filetype detection
