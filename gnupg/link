@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
+
+source "../script/lib/utils"
+
+# GnuPG refuses to work with a home directory readable by others
+mkdir -p "$HOME/.gnupg"
+chmod 700 "$HOME/.gnupg"
+
+create_symlinks "$(pwd)" "$HOME/.gnupg/"
+
+gpgconf --kill gpg-agent
