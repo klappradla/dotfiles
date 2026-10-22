@@ -1,2 +1,7 @@
 [user]
   email = max@bitcrowd.net
+  signingKey = C5572C59E57CE0D8
+[commit]
+  gpgSign = true
+[tag]
+  gpgSign = true

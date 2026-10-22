@@ -2,8 +2,8 @@
   name = Max Mulatz
   useConfigOnly = true
 [alias]
-  personal = "config user.email 'klappradla@posteo.net'"
-  work = "config user.email 'max@bitcrowd.net'"
+  personal = "config --local include.path ~/.gitconfig_personal"
+  work = "config --local include.path ~/.gitconfig_work"
   pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
   housekeep = "!f(){\
                 git remote prune origin; \
