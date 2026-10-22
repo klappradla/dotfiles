@@ -37,7 +37,7 @@ if [ $# -lt 1 ]; then
     install_topic "$topic"
   done
 else
-  TOPIC=$(echo "$1" |  tr '[:upper]' '[:lower]')
+  TOPIC=$(echo "$1" |  tr '[:upper:]' '[:lower:]')
   info "Install $TOPIC topic…"
   install_topic "$DOTS_DIR/$TOPIC"
 fi
