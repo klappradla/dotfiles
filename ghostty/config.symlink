@@ -2,6 +2,9 @@ theme = iterm2 Solarized Dark
 window-padding-x = 4
 
 font-family = "Jetbrains Mono"
+# Patch font for drawing the arrow characters of the pure prompt.
+# The characters aren't available on Jetbrains Mono, take them from Menlo.
+font-codepoint-map = U+21E1,U+21E3=Menlo
 font-size = 14
 font-thicken = true
 # Disable ligatures
